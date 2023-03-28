@@ -1,3 +1,14 @@
 # go-template
 
-A simple Go template for microservices using docker distroless image, database configuration, unit testing and CI/CD pipeline.
+This is burger-like template project for builing microservices in GO.
+
+## Features:
+- Stable Go Template (running)
+- Unit tests
+- Docker distroless image
+- Docker hub integration
+- CI/CD pipeline integration
+
+## Contributotions
+
+Feel free to contribute, fork and pull requests or pull an issue

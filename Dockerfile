@@ -1,28 +1,29 @@
+# syntax=docker/dockerfile:1
+
 ##
 ## Build
 ##
 
-FROM golang:1.20.2 AS build
+FROM golang:1.20.2 AS build-stage
 
 WORKDIR /app
 
-COPY go.mod .
-COPY go.sum .
+COPY go.mod go.sum ./
 RUN go mod download
 
 COPY *.go ./
 
-RUN go build -o /go-template
+RUN CGO_ENABLED=0 GOOS=linux go build -o /go-template
 
 ##
 ## Deploy
 ##
 
-FROM gcr.io/distroless/base-debian10
+FROM gcr.io/distroless/base-debian11 AS build-release-stage
 
 WORKDIR /
 
-COPY --from=build /go-template /go-template
+COPY --from=build-stage /go-template /go-template
 
 EXPOSE 8080
 
