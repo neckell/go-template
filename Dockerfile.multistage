@@ -1,18 +1,19 @@
+# syntax=docker/dockerfile:1
+
 ##
-## Build
+## Build the application from source
 ##
 
-FROM golang:1.20.2 AS build
+FROM golang:1.20 AS build-stage
 
 WORKDIR /app
 
-COPY go.mod .
-COPY go.sum .
+COPY go.mod go.sum ./
 RUN go mod download
 
 COPY *.go ./
 
-RUN go build -o /go-template
+RUN CGO_ENABLED=0 GOOS=linux go build -o /go-template
 
 ##
 ## Run the tests in the container
@@ -22,14 +23,14 @@ FROM build-stage AS run-test-stage
 RUN go test -v ./...
 
 ##
-## Deploy
+## Deploy the application binary into a lean image
 ##
 
-FROM gcr.io/distroless/base-debian10
+FROM gcr.io/distroless/base-debian11 AS build-release-stage
 
 WORKDIR /
 
-COPY --from=build /go-template /go-template
+COPY --from=build-stage /go-template /go-template
 
 EXPOSE 8080
 
