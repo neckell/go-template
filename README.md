@@ -11,4 +11,4 @@ This is burger-like template project for builing microservices in GO.
 
 ## Contributotions
 
-Feel free to contribute or pulling issues
+Feel free to contribute or submitting issues
