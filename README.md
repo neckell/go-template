@@ -1,6 +1,6 @@
 # go-template
 
-This is burger-like template project for builing microservices in GO.
+This is burger-like template project for building microservices in GO.
 
 ## Features:
 - Stable Go Template (running)
