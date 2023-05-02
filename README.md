@@ -3,7 +3,7 @@
 This is burger-like template project for building microservices in GO.
 
 ## Features
-- Stable Go Template (running)
+- Stable Go Template
 - Unit tests
 - Docker distroless image
 - Docker hub integration
