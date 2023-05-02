@@ -9,6 +9,6 @@ This is burger-like template project for building microservices in GO.
 - Docker hub integration
 - CI/CD pipeline integration
 
-## Contributotions
+## Contributions
 
 Feel free to contribute or submitting issues
