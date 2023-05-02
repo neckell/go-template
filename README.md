@@ -2,7 +2,7 @@
 
 This is burger-like template project for building microservices in GO.
 
-## Features:
+## Features
 - Stable Go Template (running)
 - Unit tests
 - Docker distroless image
@@ -10,5 +10,4 @@ This is burger-like template project for building microservices in GO.
 - CI/CD pipeline integration
 
 ## Contributions
-
-Feel free to contribute or submitting issues
+Feel free to contribute with new ideas, improvements or submitting issues
